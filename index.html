@@ -7,6 +7,8 @@
 <!-- relier css au html (dans le bon ordre) -->
                 <link rel="stylesheet" href="css/normalize.css">
                 <link rel="stylesheet" href="css/styles.css">
+<!-- ajout de Font Awesome pour les icônes -->
+<script src="https://kit.fontawesome.com/b5cf6a9895.js" crossorigin="anonymous"></script>
         </head>
         <body>
             <header>
@@ -16,9 +18,16 @@
                 </div>
             </header>
             <main>
+<!-- partie lacalisation -->
+                        <div class="localisation">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <h2>Paris, Belleville</h2>
+                        </div>
+<!-- partie réservez -->
                         <section id="reservez">
-                                <h1>Réservez le menu qui vous convient</h1>
-                                <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+                                        <h1>Réservez le menu qui vous convient</h1>
+                                        <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+                                        <button>Explorer nos restaurants</button>
                         </section>
 <!-- partie fonctionnement -->
                         <section id="fonctionnement">
@@ -31,7 +40,8 @@
                                                 <div class="numero-filtres">
                                                         <p>1</p>
                                                 </div>
-                                                <div class="container-filtres">
+                                                <div class="body-filtres">
+                                                        <i class="fa-solid fa-mobile-screen-button"></i>
                                                         <h2 class="nom-filtres">Choisissez un restaurant</h2>
                                                 </div>  
                                         </div>
@@ -40,7 +50,8 @@
                                                 <div class="numero-filtres">
                                                         <p>2</p>
                                                 </div>
-                                                <div class="container-filtres">
+                                                <div class="body-filtres">
+                                                        <i class="fa-solid fa-list-ul"></i>
                                                         <h2 class="nom-filtres">Composez votre menu</h2>
                                                 </div>  
                                         </div>
@@ -49,14 +60,100 @@
                                                 <div class="numero-filtres">
                                                         <p>3</p>
                                                 </div>
-                                                <div class="container-filtres">
+                                                <div class="body-filtres">
+                                                        <i class="fa-solid fa-store"></i>
                                                         <h2 class="nom-filtres">Dégustez au restaurant</h2>
                                                 </div>  
                                         </div>
                                 </div>
                         </section>
+<!-- partie restaurants -->
                         <section id="restaurants">
-
+                                <div class="contenair-cards">
+                                        <div class="cards-titre">
+                                                <h1>Restaurants</h1>
+                                        </div>
+<!-- card-->
+                                        <div class="card">
+                                                <a href="">
+                                                        <div class="image-card">
+                                                                <div class="nouveau">
+                                                                        <p>Nouveau</p>
+                                                                </div>
+                                                                <img src="assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg">
+                                                        </div>
+                                                        <div class="body-card">
+                                                                <div class="partie-gauche">
+                                                                        <h2>La palette du goût</h2>
+                                                                        <p>Ménilmontant</p>
+                                                                </div>
+                                                                <div class="partie-droite">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                </div>
+                                                        </div>
+                                                </a>
+                                        </div>
+<!-- card-->
+                                        <div class="card">
+                                                <a href="">
+                                                        <div class="image-card">
+                                                                <div class="nouveau">
+                                                                        <p>Nouveau</p>
+                                                                </div>
+                                                                <img src="assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg">
+                                                        </div>
+                                                        <div class="body-card">
+                                                                <div class="partie-gauche">
+                                                                        <h2>La palette du goût</h2>
+                                                                        <p>Ménilmontant</p>
+                                                                </div>
+                                                                <div class="partie-droite">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                </div>
+                                                        </div>
+                                                </a>
+                                        </div>
+<!-- card-->
+                                        <div class="card">
+                                                <a href="">
+                                                        <div class="image-card">
+                                                                <div class="nouveau">
+                                                                        <p>Nouveau</p>
+                                                                </div>
+                                                                <img src="assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg">
+                                                        </div>
+                                                        <div class="body-card">
+                                                                <div class="partie-gauche">
+                                                                        <h2>La palette du goût</h2>
+                                                                        <p>Ménilmontant</p>
+                                                                </div>
+                                                                <div class="partie-droite">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                </div>
+                                                        </div>
+                                                </a>
+                                        </div>
+<!-- card-->
+                                        <div class="card">
+                                                <a href="">
+                                                        <div class="image-card">
+                                                                <div class="nouveau">
+                                                                        <p>Nouveau</p>
+                                                                </div>
+                                                                <img src="assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg">
+                                                        </div>
+                                                        <div class="body-card">
+                                                                <div class="partie-gauche">
+                                                                        <h2>La palette du goût</h2>
+                                                                        <p>Ménilmontant</p>
+                                                                </div>
+                                                                <div class="partie-droite">
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                </div>
+                                                        </div>
+                                                </a>
+                                        </div>
+                                </div>
                         </section>
             </main>
             <footer>
