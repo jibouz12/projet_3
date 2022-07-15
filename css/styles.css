@@ -1,3 +1,12 @@
+/* importer les polices */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
 /* retirer décorations des liens */
 a {
     color: #000;
@@ -18,7 +27,9 @@ body {
 header {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 25px 0px;
+    position: relative;
 }
 
 /* logo */
@@ -29,7 +40,7 @@ header {
 }
 
 #logo {
-    width: 80%;
+    width: 60%;
 }
 
 /* partie localisation */
