@@ -139,15 +139,15 @@ header {
     padding-left: 50px;
     border-radius: 25px;
     background-color: darken(#fff, 10);
-    transition: background-color 500ms;
+    transition: all 500ms;
     i {
         color: lighten(#000, 50 ); /* couleur noire moins sombre de 50% */
-        &:hover {
-            color: $Primaire; /* hover -> changer la couleur */
-        }
     }
     &:hover {
-        background-color: lighten($Primaire, 30)
+        background-color: lighten($Primaire, 30);
+        i {
+            color: $Primaire; /* hover -> changer la couleur de l'icone */
+        }
     }
 }
 

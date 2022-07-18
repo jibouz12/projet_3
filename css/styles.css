@@ -135,16 +135,16 @@ header {
   padding-left: 50px;
   border-radius: 25px;
   background-color: #e6e6e6;
-  transition: background-color 500ms;
+  transition: all 500ms;
 }
 .body-filtres i {
   color: gray; /* couleur noire moins sombre de 50% */
 }
-.body-filtres i:hover {
-  color: #9356DC; /* hover -> changer la couleur */
-}
 .body-filtres:hover {
   background-color: #e4d5f6;
+}
+.body-filtres:hover i {
+  color: #9356DC; /* hover -> changer la couleur de l'icone */
 }
 
 .nom-filtres {
