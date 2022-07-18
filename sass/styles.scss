@@ -5,8 +5,8 @@
 $Primaire: #9356DC;
 $Secondaire: #FF79DA;
 $Tertiaire: #99E2D0;
-$Shadow: darken(#fff, 50); /* couleur shadow boutons */
-$Shadow-survol: darken(#fff, 65); /* couleur shadow boutons au survol */
+$Shadow: darken(#fff, 30); /* couleur shadow boutons */
+$Shadow-survol: darken(#fff, 60); /* couleur shadow boutons au survol */
 
 * {
     box-sizing: border-box;
@@ -218,14 +218,50 @@ header {
 .partie-droite {
     i {
         font-size: 38px;
-        transition: all 250ms;
         &:hover {
-            font-weight: bold; /* pour remplir l'icone */
-            background: linear-gradient(180deg, $Primaire, $Secondaire);
-            color: #fff;
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text; /*fit background au text */
+            animation-name: animation-coeur;
+            animation-duration: 1500ms;
+            animation-fill-mode: both;
         }
+    }
+}
+
+/* animation logo coeur */
+@keyframes animation-coeur {
+    0% {
+        font-weight: initial; 
+    }
+    25% {
+        font-weight: bold; /* pour remplir l'icone */
+        background: linear-gradient(180deg, #fff 75%, $Secondaire); /* le blanc occupe 75% de l'espace */
+        color: #fff;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text; /*fit background au text */
+    }
+    50% {
+        font-weight: bold; /* pour remplir l'icone */
+        background: linear-gradient(180deg, #fff 50%, $Secondaire); /* le blanc occupe 50% de l'espace */
+        color: #fff;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text; /*fit background au text */
+    }
+    75% {
+        font-weight: bold; /* pour remplir l'icone */
+        background: linear-gradient(180deg, #fff 25%, $Secondaire); /* le blanc occupe 25% de l'espace */
+        color: #fff;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text; /*fit background au text */
+    }
+    100% {
+        font-weight: bold; /* pour remplir l'icone */
+        background: linear-gradient(180deg, $Primaire 25%, $Secondaire); /* la couleur primaire a remplacé le blanc */
+        color: #fff;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text; /*fit background au text */
     }
 }
 

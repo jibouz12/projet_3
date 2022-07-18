@@ -87,12 +87,12 @@ header {
   border: none;
   background: linear-gradient(350deg, #9356DC, #FF79DA);
   color: #fff;
-  box-shadow: 5px 10px 25px gray;
+  box-shadow: 5px 10px 25px #b3b3b3;
   transition: all 500ms;
 }
 #reservez button:hover {
   background: linear-gradient(350deg, #a16be0, #ff93e1);
-  box-shadow: 5px 10px 25px #595959;
+  box-shadow: 5px 10px 25px #666666;
 }
 
 /* partie fonctionnement */
@@ -212,16 +212,51 @@ header {
 /* logo coeur en bas à droite */
 .partie-droite i {
   font-size: 38px;
-  transition: all 250ms;
 }
 .partie-droite i:hover {
-  font-weight: bold; /* pour remplir l'icone */
-  background: linear-gradient(180deg, #9356DC, #FF79DA);
-  color: #fff;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text; /*fit background au text */
+  animation-name: animation-coeur;
+  animation-duration: 1500ms;
+  animation-fill-mode: both;
 }
 
+/* animation logo coeur */
+@keyframes animation-coeur {
+  0% {
+    font-weight: initial;
+  }
+  25% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #fff 75%, #FF79DA); /* le blanc occupe 75% de l'espace */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
+  50% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #fff 50%, #FF79DA); /* le blanc occupe 50% de l'espace */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
+  75% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #fff 25%, #FF79DA); /* le blanc occupe 25% de l'espace */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
+  100% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #9356DC 25%, #FF79DA); /* la couleur primaire a remplacé le blanc */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
+}
 /* footer */
 .footer {
   padding: 0px 0px 25px 25px;
