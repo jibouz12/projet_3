@@ -1,6 +1,13 @@
 /* importer les polices */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
 
+/* mise en place des couleurs */
+$Primaire: #9356DC;
+$Secondaire: #FF79DA;
+$Tertiaire: #99E2D0;
+$Shadow: darken(#fff, 50); /* couleur shadow boutons */
+$Shadow-survol: darken(#fff, 65); /* couleur shadow boutons au survol */
+
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
@@ -10,14 +17,12 @@
 /* retirer décorations des liens */
 a {
     color: #000;
-}
-
-a:link {
-    text-decoration: none;
-}
-
-a:visited {
-    color: #000;
+    &:link {
+        text-decoration: none;
+    }
+    &:visited {
+        color: #000;
+    }
 }
 
 body {
@@ -50,22 +55,20 @@ header {
     align-items: center;
     justify-content: center;
     padding: 25px 0px;
-    background-color: gainsboro;
-}
-
-.localisation form {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-}
-
-.localisation i {
-    margin: 0px 25px;
+    background-color: darken(#fff, 25);
+    form {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+    }
+    i {
+        margin: 0px 25px;
+    }
 }
 
 #placeholder {
     border: none;
-    background-color: gainsboro;
+    background-color: darken(#fff, 25);;
 }
 
 /* partie réservez */
@@ -76,19 +79,25 @@ header {
     align-items: center;
     text-align: center;
     padding: 0% 15%;
-    background-color: ghostwhite;
-}
+    background-color: darken(#fff, 10);
+    h1 {
+        margin: 50px 0px;
+    }
+    button {
+        margin: 50px 0px;
+        padding: 25px;
+        border-radius: 50px;
+        border: none;
+        background: linear-gradient(350deg, $Primaire, $Secondaire);
+        color: #fff;
+        box-shadow: 5px 10px 25px $Shadow;
+        transition: all 500ms;
+        &:hover {
+            background: linear-gradient(350deg, lighten($Primaire, 5), lighten($Secondaire, 5));
+            box-shadow: 5px 10px 25px $Shadow-survol;
+        }
 
-#reservez h1 {
-    margin: 50px 0px;
-}
-
-#reservez button {
-    margin: 50px 0px;
-    padding: 25px;
-    border-radius: 50px;
-    background-color: #9356DC;
-    color: #fff;
+    }
 }
 
 /* partie fonctionnement */
@@ -114,7 +123,7 @@ header {
     position: absolute;
     width: 50px;
     height: 50px; 
-    background-color: #9356DC;
+    background-color: $Primaire;
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -130,7 +139,17 @@ header {
     width: 100%;
     padding-left: 50px;
     border-radius: 25px;
-    background-color: ghostwhite;
+    background-color: darken(#fff, 10);
+    transition: background-color 500ms;
+    i {
+        color: lighten(#000, 50 ); /* couleur noire moins sombre de 50% */
+        &:hover {
+            color: $Primaire; /* hover -> changer la couleur */
+        }
+    }
+    &:hover {
+        background-color: lighten($Primaire, 30)
+    }
 }
 
 .nom-filtres {
@@ -140,7 +159,7 @@ header {
 /* partie restaurants */
 #restaurants {
     padding: 25px 0px;
-    background-color: ghostwhite;
+    background-color: darken(#fff, 10);
 }
 
 .contenair-cards {
@@ -154,17 +173,22 @@ header {
     margin: 25px 0px;
     border-radius: 25px;
     background-color: #fff;
-}
-
-.cards a {
-    width: 100%;
-    height: 100%;
+    a {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .image-card {
     height: 66%;
     display: flex;
     position: relative;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 25px 25px 0px 0px;
+    }
 }
 
 /* logo "nouveau" en haut à droite de la card */
@@ -172,20 +196,14 @@ header {
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 100px;
+    width: 125px;
     height: 25px;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #99E2D0;
-}
-
-.image-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 25px 25px 0px 0px;
+    color: darken($Tertiaire, 30);
+    background-color: $Tertiaire;
 }
 
 .body-card {
@@ -196,9 +214,26 @@ header {
     margin: 0px 25px;
 }
 
+/* logo coeur en bas à droite */
+.partie-droite {
+    i {
+        font-size: 38px;
+        transition: all 250ms;
+        &:hover {
+            font-weight: bold; /* pour remplir l'icone */
+            background: linear-gradient(180deg, $Primaire, $Secondaire);
+            color: #fff;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; /*fit background au text */
+        }
+    }
+}
+
 /* footer */
 .footer {
     padding: 0px 0px 25px 25px;
+    background-color: #fff;
+    filter: invert(95%); /* inverser les couleurs */
 }
 
 .logo-footer {
@@ -208,9 +243,7 @@ header {
 
 .menu-footer-ligne {
     margin: 5px 0px;
+    i {
+        margin-right: 5px;
+    }
 }
-
-.menu-footer-ligne i {
-    margin-right: 5px;
-}
-

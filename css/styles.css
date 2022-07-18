@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* importer les polices */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+/* mise en place des couleurs */
+/* couleur shadow boutons */
+/* couleur shadow boutons au survol */
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -11,11 +14,9 @@
 a {
   color: #000;
 }
-
 a:link {
   text-decoration: none;
 }
-
 a:visited {
   color: #000;
 }
@@ -50,22 +51,20 @@ header {
   align-items: center;
   justify-content: center;
   padding: 25px 0px;
-  background-color: gainsboro;
+  background-color: #bfbfbf;
 }
-
 .localisation form {
   width: 50%;
   display: flex;
   flex-direction: row;
 }
-
 .localisation i {
   margin: 0px 25px;
 }
 
 #placeholder {
   border: none;
-  background-color: gainsboro;
+  background-color: #bfbfbf;
 }
 
 /* partie réservez */
@@ -76,19 +75,24 @@ header {
   align-items: center;
   text-align: center;
   padding: 0% 15%;
-  background-color: ghostwhite;
+  background-color: #e6e6e6;
 }
-
 #reservez h1 {
   margin: 50px 0px;
 }
-
 #reservez button {
   margin: 50px 0px;
   padding: 25px;
   border-radius: 50px;
-  background-color: #9356DC;
+  border: none;
+  background: linear-gradient(350deg, #9356DC, #FF79DA);
   color: #fff;
+  box-shadow: 5px 10px 25px gray;
+  transition: all 500ms;
+}
+#reservez button:hover {
+  background: linear-gradient(350deg, #a16be0, #ff93e1);
+  box-shadow: 5px 10px 25px #595959;
 }
 
 /* partie fonctionnement */
@@ -130,7 +134,17 @@ header {
   width: 100%;
   padding-left: 50px;
   border-radius: 25px;
-  background-color: ghostwhite;
+  background-color: #e6e6e6;
+  transition: background-color 500ms;
+}
+.body-filtres i {
+  color: gray; /* couleur noire moins sombre de 50% */
+}
+.body-filtres i:hover {
+  color: #9356DC; /* hover -> changer la couleur */
+}
+.body-filtres:hover {
+  background-color: #e4d5f6;
 }
 
 .nom-filtres {
@@ -140,7 +154,7 @@ header {
 /* partie restaurants */
 #restaurants {
   padding: 25px 0px;
-  background-color: ghostwhite;
+  background-color: #e6e6e6;
 }
 
 .contenair-cards {
@@ -155,8 +169,7 @@ header {
   border-radius: 25px;
   background-color: #fff;
 }
-
-.cards a {
+.card a {
   width: 100%;
   height: 100%;
 }
@@ -166,26 +179,26 @@ header {
   display: flex;
   position: relative;
 }
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px 25px 0px 0px;
+}
 
 /* logo "nouveau" en haut à droite de la card */
 .nouveau {
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 100px;
+  width: 125px;
   height: 25px;
-  padding: 10px;
+  padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #32b091;
   background-color: #99E2D0;
-}
-
-.image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 25px 25px 0px 0px;
 }
 
 .body-card {
@@ -196,9 +209,24 @@ header {
   margin: 0px 25px;
 }
 
+/* logo coeur en bas à droite */
+.partie-droite i {
+  font-size: 38px;
+  transition: all 250ms;
+}
+.partie-droite i:hover {
+  font-weight: bold; /* pour remplir l'icone */
+  background: linear-gradient(180deg, #9356DC, #FF79DA);
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; /*fit background au text */
+}
+
 /* footer */
 .footer {
   padding: 0px 0px 25px 25px;
+  background-color: #fff;
+  filter: invert(95%); /* inverser les couleurs */
 }
 
 .logo-footer {
@@ -209,7 +237,6 @@ header {
 .menu-footer-ligne {
   margin: 5px 0px;
 }
-
 .menu-footer-ligne i {
   margin-right: 5px;
 }
