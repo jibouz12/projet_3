@@ -19,8 +19,9 @@ header {
 }
 header i {
   position: absolute;
+  font-size: 30px;
   left: 25px;
-  top: 42px; /* height header = 100px; font-size = 16px; 100/2-16/2 = 42px */
+  top: 35px; /* height header = 100px; font-size = 30px; 100/2-30/2 = 35px */
 }
 
 h1 {
@@ -71,16 +72,28 @@ h1 {
 
 /* cards menu */
 .cards-menu {
+  height: 100px;
   background-color: #fff;
   border-radius: 25px;
   margin-top: 25px;
-  padding: 0px 25px;
+  padding-left: 25px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   box-shadow: 5px 10px 25px #b3b3b3;
   animation-name: animation-menus;
   animation-duration: 3000ms;
+  overflow: hidden; /* cacher ce qui sort de la card lors de l'animation */
+}
+.cards-menu:hover > .cards-menu-prix {
+  animation-name: animation-logo;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+}
+.cards-menu:hover > .cards-menu-prix > .icone > i {
+  animation-name: rotation-logo;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
 }
 
 .entree {
@@ -109,12 +122,61 @@ h1 {
     transform: translateY(0); /* ...pour finir à la position d'origine Y = 0 */
   }
 }
-.cards-menu-prix {
-  display: flex;
-  align-items: flex-end; /* placer le prix en bas */
-  padding-left: 25px;
+/* couper le texte cacher et mettre points de suspension */
+.cards-menu-texte {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.cards-menu-prix {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transform: translate(100px, 0px); /* placer le bloc à droite pour cacher le logo au départ */
+}
+.cards-menu-prix > p {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 25px;
+}
+.cards-menu-prix > .icone {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 25px 25px 0px;
+  background-color: #99E2D0;
+}
+.cards-menu-prix > .icone > i {
+  font-size: 32px;
+  color: #fff;
+}
+
+/* animation apparition logo sur cards */
+@keyframes animation-logo {
+  0% {
+    transform: translate(100px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+/* animation rotation logo */
+@keyframes rotation-logo {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
 /* bouton commander */
 .commander {
   display: flex;
