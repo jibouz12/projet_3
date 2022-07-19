@@ -54,7 +54,7 @@ header {
   background-color: #bfbfbf;
 }
 .localisation form {
-  width: 50%;
+  width: fit-content;
   display: flex;
   flex-direction: row;
 }
@@ -63,6 +63,7 @@ header {
 }
 
 #placeholder {
+  width: fit-content;
   border: none;
   background-color: #bfbfbf;
 }

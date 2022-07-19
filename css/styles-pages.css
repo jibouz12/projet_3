@@ -85,12 +85,16 @@ h1 {
   animation-duration: 3000ms;
   overflow: hidden; /* cacher ce qui sort de la card lors de l'animation */
 }
-.cards-menu:hover > .cards-menu-prix {
+.cards-menu:hover .cards-menu-texte {
+  transition: margin 1000ms; /* créer transition de margin-right pour suivre l'animation et réduire la taille des textes */
+  margin-right: 0px;
+}
+.cards-menu:hover .cards-menu-prix {
   animation-name: animation-logo;
   animation-duration: 1000ms;
   animation-fill-mode: both;
 }
-.cards-menu:hover > .cards-menu-prix > .icone > i {
+.cards-menu:hover .cards-menu-prix > .icone > i {
   animation-name: rotation-logo;
   animation-duration: 1000ms;
   animation-fill-mode: both;
@@ -127,27 +131,35 @@ h1 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-right: -65px; /* agrandir la largeur droite de 65px pour compenser le décalage du prix */
+}
+.cards-menu-texte h2, .cards-menu-texte p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cards-menu-prix {
-  min-width: 200px;
+  width: 130px;
+  height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  transform: translate(100px, 0px); /* placer le bloc à droite pour cacher le logo au départ */
+  background-color: #fff;
+  transform: translateX(65px); /*placer le prix à 65px vers la droite au départ pour cacher le logo */
 }
 .cards-menu-prix > p {
-  width: 50%;
+  width: 65px;
   height: 80%;
+  padding-right: 25px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  padding-right: 25px;
 }
 .cards-menu-prix > .icone {
   height: 100%;
-  width: 50%;
+  width: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,7 +174,7 @@ h1 {
 /* animation apparition logo sur cards */
 @keyframes animation-logo {
   0% {
-    transform: translate(100px, 0px);
+    transform: translate(65px, 0px);
   }
   100% {
     transform: translate(0px, 0px);

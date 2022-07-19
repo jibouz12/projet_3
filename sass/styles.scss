@@ -57,7 +57,7 @@ header {
     padding: 25px 0px;
     background-color: darken(#fff, 25);
     form {
-        width: 50%;
+        width: fit-content;
         display: flex;
         flex-direction: row;
     }
@@ -67,6 +67,7 @@ header {
 }
 
 #placeholder {
+    width: fit-content;
     border: none;
     background-color: darken(#fff, 25);;
 }

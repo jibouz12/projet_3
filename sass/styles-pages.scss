@@ -88,14 +88,20 @@ h1 {
     animation-name: animation-menus;
     animation-duration: 3000ms;
     overflow: hidden; /* cacher ce qui sort de la card lors de l'animation */
-    &:hover > .cards-menu-prix {
+    &:hover {
+        .cards-menu-texte {  
+            transition: margin 1000ms; /* créer transition de margin-right pour suivre l'animation et réduire la taille des textes */
+            margin-right: 0px; 
+        }
+        .cards-menu-prix {
         animation-name: animation-logo;
         animation-duration: 1000ms;
         animation-fill-mode: both;
-        > .icone > i {
-            animation-name: rotation-logo;
-            animation-duration: 1000ms;
-            animation-fill-mode: both;
+            > .icone > i {
+                animation-name: rotation-logo;
+                animation-duration: 1000ms;
+                animation-fill-mode: both;
+            }
         }
     }
 }
@@ -132,25 +138,33 @@ h1 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-right: -65px; /* agrandir la largeur droite de 65px pour compenser le décalage du prix */
+    h2, p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
 .cards-menu-prix {
-    min-width: 200px;
+    width: 130px;
+    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: #fff;
     > p {
-        width: 50%;
+        width: 65px;
         height: 80%;
+        padding-right: 25px;
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
-        padding-right: 25px;
     }
     > .icone {
         height: 100%;
-        width: 50%;
+        width: 65px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -161,13 +175,13 @@ h1 {
             color: #fff;
         }
     }
-    transform: translate(100px, 0px); /* placer le bloc à droite pour cacher le logo au départ */ 
+    transform: translateX(65px); /*placer le prix à 65px vers la droite au départ pour cacher le logo */
 }
 
 /* animation apparition logo sur cards */
 @keyframes animation-logo {
     0% {
-        transform: translate(100px, 0px);
+        transform: translate(65px, 0px);
     }
     100% {
         transform: translate(0px, 0px);
