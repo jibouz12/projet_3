@@ -1,12 +1,8 @@
 /* importer les polices */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
 
-/* mise en place des couleurs */
-$Primaire: #9356DC;
-$Secondaire: #FF79DA;
-$Tertiaire: #99E2D0;
-$Shadow: darken(#fff, 30); /* couleur shadow boutons */
-$Shadow-survol: darken(#fff, 60); /* couleur shadow boutons au survol */
+/* importer les fichiers sass */
+@import "animations/coeur", "couleurs";
 
 * {
     box-sizing: border-box;
@@ -75,7 +71,7 @@ h1 {
     animation-duration: 3000ms;
     > p {
         width: 50px;
-        border-bottom: solid 5px $Tertiaire;
+        border-bottom: solid 5px $tertiaire;
     }
 }
 
@@ -89,7 +85,7 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    box-shadow: 5px 10px 25px $Shadow;
+    box-shadow: 5px 10px 25px $shadow;
     animation-name: animation-menus;
     animation-duration: 3000ms;
     overflow: hidden; /* cacher ce qui sort de la card lors de l'animation */
@@ -174,7 +170,7 @@ h1 {
         justify-content: center;
         align-items: center;
         border-radius: 0px 25px 25px 0px;
-        background-color: $Tertiaire;
+        background-color: $tertiaire;
         > i {
             font-size: 32px;
             color: #fff;
@@ -212,13 +208,13 @@ h1 {
         padding: 25px 50px;
         border-radius: 50px;
         border: none;
-        background: linear-gradient(350deg, $Primaire, $Secondaire);
+        background: linear-gradient(350deg, $primaire, $secondaire);
         color: #fff;
-        box-shadow: 5px 10px 25px $Shadow;
+        box-shadow: 5px 10px 25px $shadow;
         transition: all 500ms;
         &:hover {
-            background: linear-gradient(350deg, lighten($Primaire, 5), lighten($Secondaire, 5));
-            box-shadow: 5px 10px 25px $Shadow-survol;
+            background: linear-gradient(350deg, lighten($primaire, 5), lighten($secondaire, 5));
+            box-shadow: 5px 10px 25px $shadow-survol;
         }
     }
 }
