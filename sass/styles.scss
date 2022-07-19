@@ -25,6 +25,66 @@ a {
     }
 }
 
+/* loading spinner */
+.spinner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(350deg, $Primaire, $Secondaire);
+    position: absolute;
+    top: 0px;
+    animation-name: load-spin;
+    animation-duration: 3000ms;
+    animation-fill-mode: both;
+    animation-delay: 0ms;
+    .spinner-body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 75%;
+            margin-bottom: 50px;
+        }
+        .icone-container {
+            animation-name: load-spin-logo;
+            animation-duration: 2000ms;
+            animation-fill-mode: both;
+            animation-delay: 500ms;
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            > i {
+                font-size: 48px;
+            }
+        }
+    }
+}
+
+/* animations spinner */
+@keyframes load-spin {
+    90% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes load-spin-logo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 body {
     margin: 0px;
 }

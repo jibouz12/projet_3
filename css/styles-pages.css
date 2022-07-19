@@ -59,6 +59,11 @@ h1 {
 .menu-titre i {
   font-size: 38px;
 }
+.menu-titre i:hover {
+  animation-name: animation-coeur;
+  animation-duration: 1500ms;
+  animation-fill-mode: both;
+}
 
 .menu-sous-titre {
   margin-top: 50px;

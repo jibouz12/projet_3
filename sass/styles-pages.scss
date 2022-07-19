@@ -61,6 +61,11 @@ h1 {
     justify-content: space-between;
     i {
         font-size: 38px;
+        &:hover {
+            animation-name: animation-coeur;
+            animation-duration: 1500ms;
+            animation-fill-mode: both;
+        }
     }
 }
 
