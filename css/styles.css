@@ -1,18 +1,342 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "couleurs";
- *   |         ^^^^^^^^^^
- *   '
- *   sass\animations\coeur.scss 1:9  @import
- *   sass\styles.scss 5:9            root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"couleurs\";\d\a   \2502          ^^^^^^^^^^\a   \2575 \a   sass\\animations\\coeur.scss 1:9  @import\a   sass\\styles.scss 5:9            root stylesheet";
+@charset "UTF-8";
+/* importer les polices */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+/* importer les fichiers sass */ /* couleur shadow boutons */
+/* couleur shadow boutons au survol */
+/* couleur shadow boutons */
+/* couleur shadow boutons au survol */
+/* animation logo coeur */
+@keyframes animation-coeur {
+  0% {
+    font-weight: initial;
+  }
+  25% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #f7f7f7 75%, #FF79DA); /* le blanc occupe 75% de l'espace */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
+  50% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #f7f7f7 50%, #FF79DA); /* le blanc occupe 50% de l'espace */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
+  75% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #f7f7f7 25%, #FF79DA); /* le blanc occupe 25% de l'espace */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
+  100% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #9356DC 25%, #FF79DA); /* la couleur primaire a remplacé le blanc */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
 }
+.btn, #reservez button {
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(350deg, #9356DC, #FF79DA);
+  color: #f7f7f7;
+  box-shadow: 5px 10px 25px #b3b3b3;
+  transition: all 500ms;
+}
+.btn:hover, #reservez button:hover {
+  background: linear-gradient(350deg, #a16be0, #ff93e1);
+  box-shadow: 5px 10px 25px #666666;
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(350deg, #9356DC, #FF79DA);
+  position: absolute;
+  top: 0px;
+  animation-name: load-spin;
+  animation-duration: 3000ms;
+  animation-fill-mode: both;
+  animation-delay: 0ms;
+}
+.spinner .spinner-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.spinner .spinner-body img {
+  width: 75%;
+  margin-bottom: 50px;
+}
+.spinner .spinner-body .icone-container {
+  animation-name: load-spin-logo;
+  animation-duration: 2000ms;
+  animation-fill-mode: both;
+  animation-delay: 500ms;
+  width: 80px;
+  height: 80px;
+  background-color: #f7f7f7;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner .spinner-body .icone-container > i {
+  font-size: 48px;
+}
+
+/* animations spinner */
+@keyframes load-spin {
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes load-spin-logo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+}
+
+/* retirer décorations des liens */
+a {
+  color: #000;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  color: #000;
+}
+
+body {
+  margin: 0px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0px;
+  height: 100px;
+  background-color: #fff;
+}
+
+/* logo */
+.container-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-logo > img {
+  width: 60%;
+}
+
+/* partie localisation */
+.localisation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 0px;
+  background-color: #bfbfbf;
+}
+.localisation form {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+.localisation i {
+  margin: 0px 25px;
+}
+
+#placeholder {
+  width: fit-content;
+  border: none;
+  background-color: #bfbfbf;
+}
+
+/* partie réservez */
+#reservez {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0% 15%;
+  background-color: #f7f7f7;
+}
+#reservez h1 {
+  margin: 50px 0px;
+}
+#reservez button {
+  margin: 50px 0px;
+  padding: 25px;
+}
+
+/* partie fonctionnement */
+#fonctionnement {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 0px;
+}
+
+/* filtres */
+.filtres {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 25px;
+}
+
+#filtres-titre {
+  margin-left: 25px;
+}
+
+.numero-filtres {
+  position: absolute;
+  left: 35px; /* margin 2*25 - width 30/2 = 35px */
+  width: 30px;
+  height: 30px;
+  background-color: #9356DC;
+  color: #f7f7f7;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-filtres {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 25px;
+  width: 100%;
+  padding-left: 50px;
+  border-radius: 25px;
+  background-color: #f7f7f7;
+  transition: all 500ms;
+}
+.body-filtres i {
+  color: gray; /* couleur noire moins sombre de 50% */
+}
+.body-filtres:hover {
+  background-color: #e4d5f6;
+}
+.body-filtres:hover i {
+  color: #9356DC; /* hover -> changer la couleur de l'icone */
+}
+
+.nom-filtres {
+  margin-left: 25px;
+}
+
+/* partie restaurants */
+#restaurants {
+  padding: 25px 0px;
+  background-color: #f7f7f7;
+}
+
+.contenair-cards {
+  margin: 0px 25px;
+}
+
+/* cards */
+.card {
+  width: 100%;
+  height: 400px;
+  margin: 25px 0px;
+  border-radius: 25px;
+  background-color: #fff;
+}
+.card a {
+  width: 100%;
+  height: 100%;
+}
+
+.image-card {
+  height: 66%;
+  display: flex;
+  position: relative;
+}
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px 25px 0px 0px;
+}
+
+/* logo "nouveau" en haut à droite de la card */
+.nouveau {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 125px;
+  height: 25px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #32b091;
+  background-color: #99E2D0;
+}
+
+.body-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 25px;
+}
+
+/* logo coeur en bas à droite */
+.partie-droite i {
+  font-size: 38px;
+}
+.partie-droite i:hover {
+  animation-name: animation-coeur;
+  animation-duration: 1500ms;
+  animation-fill-mode: both;
+}
+
+/* footer */
+.footer {
+  padding: 0px 0px 25px 25px;
+  background-color: #f7f7f7;
+  filter: invert(95%); /* inverser les couleurs */
+}
+
+.logo-footer {
+  width: 50%;
+  padding: 25px 0px;
+}
+
+.menu-footer-ligne {
+  margin: 5px 0px;
+}
+.menu-footer-ligne i {
+  margin-right: 5px;
+}
+
+/*# sourceMappingURL=styles.css.map */

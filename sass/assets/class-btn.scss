@@ -1,0 +1,12 @@
+.btn {
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(350deg, $primaire, $secondaire);
+    color: $blanc-casse;
+    box-shadow: 5px 10px 25px $shadow;
+    transition: all 500ms;
+    &:hover {
+        background: linear-gradient(350deg, lighten($primaire, 5), lighten($secondaire, 5));
+        box-shadow: 5px 10px 25px $shadow-survol;
+    }
+}

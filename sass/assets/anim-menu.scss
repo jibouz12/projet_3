@@ -1,0 +1,46 @@
+/* animation apparition des menus lors du chargement de la page */
+@keyframes animation-menus {
+    0% {
+        opacity: 0; /* démarrer invisible... */
+        transform: translateY(50px); /* démarrer à 50px sud... */
+    }
+    100% {
+        opacity: 1; /* ...pour finir totalement visible */
+        transform: translateY(0); /* ...pour finir à la position d'origine Y = 0 */
+    }
+}
+
+.entree {
+    animation-delay: 0ms;
+    animation-fill-mode: both;
+}
+
+.plat {
+    animation-delay: 1500ms;
+    animation-fill-mode: both;
+}
+
+.dessert {
+    animation-delay: 3000ms;
+    animation-fill-mode: both; /*pour qu'avant l'anim l'opacité soit égale à 0 et égale à 1 après l'anim */
+}
+
+/* animation apparition logo sur cards */
+@keyframes animation-logo {
+    0% {
+        transform: translate(65px, 0px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+/* animation rotation logo */
+@keyframes rotation-logo {
+    0% {
+        transform: rotate(-360deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}

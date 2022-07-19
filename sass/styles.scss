@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
 
 /* importer les fichiers sass */
-@import "animations/coeur", "couleurs";
+@import "assets/couleurs", "assets/anim-coeur", "assets/class-btn", "assets/spinner";
 
 * {
     box-sizing: border-box;
@@ -21,66 +21,6 @@ a {
     }
 }
 
-/* loading spinner */
-.spinner {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(350deg, $primaire, $secondaire);
-    position: absolute;
-    top: 0px;
-    animation-name: load-spin;
-    animation-duration: 3000ms;
-    animation-fill-mode: both;
-    animation-delay: 0ms;
-    .spinner-body {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        img {
-            width: 75%;
-            margin-bottom: 50px;
-        }
-        .icone-container {
-            animation-name: load-spin-logo;
-            animation-duration: 2000ms;
-            animation-fill-mode: both;
-            animation-delay: 500ms;
-            width: 80px;
-            height: 80px;
-            background-color: $blanc-casse;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            > i {
-                font-size: 48px;
-            }
-        }
-    }
-}
-
-/* animations spinner */
-@keyframes load-spin {
-    90% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(0);
-    }
-}
-
-@keyframes load-spin-logo {
-    0% {
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
 body {
     margin: 0px;
 }
@@ -91,6 +31,7 @@ header {
     align-items: center;
     padding: 25px 0px;
     height: 100px;
+    background-color: #fff;
 }
 
 /* logo */
@@ -98,10 +39,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#logo {
-    width: 60%;
+    > img {
+        width: 60%;
+    }
 }
 
 /* partie localisation */
@@ -111,7 +51,7 @@ header {
     align-items: center;
     justify-content: center;
     padding: 25px 0px;
-    background-color: darken(#fff, 25);
+    background-color: $blanc-casse-2;
     form {
         width: fit-content;
         display: flex;
@@ -125,7 +65,7 @@ header {
 #placeholder {
     width: fit-content;
     border: none;
-    background-color: darken(#fff, 25);;
+    background-color: $blanc-casse-2;
 }
 
 /* partie réservez */
@@ -143,16 +83,7 @@ header {
     button {
         margin: 50px 0px;
         padding: 25px;
-        border-radius: 50px;
-        border: none;
-        background: linear-gradient(350deg, $primaire, $secondaire);
-        color: $blanc-casse;
-        box-shadow: 5px 10px 25px $shadow;
-        transition: all 500ms;
-        &:hover {
-            background: linear-gradient(350deg, lighten($primaire, 5), lighten($secondaire, 5));
-            box-shadow: 5px 10px 25px $shadow-survol;
-        }
+        @extend .btn;
     }
 }
 
@@ -177,8 +108,9 @@ header {
 
 .numero-filtres {
     position: absolute;
-    width: 50px;
-    height: 50px; 
+    left: 35px; /* margin 2*25 - width 30/2 = 35px */
+    width: 30px;
+    height: 30px; 
     background-color: $primaire;
     color: $blanc-casse;
     border-radius: 50%;
@@ -228,7 +160,7 @@ header {
     height: 400px;
     margin: 25px 0px;
     border-radius: 25px;
-    background-color: $blanc-casse;
+    background-color: #fff;
     a {
         width: 100%;
         height: 100%;

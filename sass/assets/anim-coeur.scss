@@ -7,7 +7,7 @@
     }
     25% {
         font-weight: bold; /* pour remplir l'icone */
-        background: linear-gradient(180deg, #fff 75%, $secondaire); /* le blanc occupe 75% de l'espace */
+        background: linear-gradient(180deg, $blanc-casse 75%, $secondaire); /* le blanc occupe 75% de l'espace */
         color: #fff;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -15,7 +15,7 @@
     }
     50% {
         font-weight: bold; /* pour remplir l'icone */
-        background: linear-gradient(180deg, #fff 50%, $secondaire); /* le blanc occupe 50% de l'espace */
+        background: linear-gradient(180deg, $blanc-casse 50%, $secondaire); /* le blanc occupe 50% de l'espace */
         color: #fff;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -23,7 +23,7 @@
     }
     75% {
         font-weight: bold; /* pour remplir l'icone */
-        background: linear-gradient(180deg, #fff 25%, $secondaire); /* le blanc occupe 25% de l'espace */
+        background: linear-gradient(180deg, $blanc-casse 25%, $secondaire); /* le blanc occupe 25% de l'espace */
         color: #fff;
         -webkit-text-fill-color: transparent;
         background-clip: text;

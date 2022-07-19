@@ -1,9 +1,105 @@
 @charset "UTF-8";
 /* importer les polices */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
-/* mise en place des couleurs */
+/* importer les fichiers sass */ /* couleur shadow boutons */
+/* couleur shadow boutons au survol */
 /* couleur shadow boutons */
 /* couleur shadow boutons au survol */
+/* animation logo coeur */
+@keyframes animation-coeur {
+  0% {
+    font-weight: initial;
+  }
+  25% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #f7f7f7 75%, #FF79DA); /* le blanc occupe 75% de l'espace */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
+  50% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #f7f7f7 50%, #FF79DA); /* le blanc occupe 50% de l'espace */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
+  75% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #f7f7f7 25%, #FF79DA); /* le blanc occupe 25% de l'espace */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
+  100% {
+    font-weight: bold; /* pour remplir l'icone */
+    background: linear-gradient(180deg, #9356DC 25%, #FF79DA); /* la couleur primaire a remplacé le blanc */
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /*fit background au text */
+  }
+}
+.btn, .commander button {
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(350deg, #9356DC, #FF79DA);
+  color: #f7f7f7;
+  box-shadow: 5px 10px 25px #b3b3b3;
+  transition: all 500ms;
+}
+.btn:hover, .commander button:hover {
+  background: linear-gradient(350deg, #a16be0, #ff93e1);
+  box-shadow: 5px 10px 25px #666666;
+}
+
+/* animation apparition des menus lors du chargement de la page */
+@keyframes animation-menus {
+  0% {
+    opacity: 0; /* démarrer invisible... */
+    transform: translateY(50px); /* démarrer à 50px sud... */
+  }
+  100% {
+    opacity: 1; /* ...pour finir totalement visible */
+    transform: translateY(0); /* ...pour finir à la position d'origine Y = 0 */
+  }
+}
+.entree {
+  animation-delay: 0ms;
+  animation-fill-mode: both;
+}
+
+.plat {
+  animation-delay: 1500ms;
+  animation-fill-mode: both;
+}
+
+.dessert {
+  animation-delay: 3000ms;
+  animation-fill-mode: both; /*pour qu'avant l'anim l'opacité soit égale à 0 et égale à 1 après l'anim */
+}
+
+/* animation apparition logo sur cards */
+@keyframes animation-logo {
+  0% {
+    transform: translate(65px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+/* animation rotation logo */
+@keyframes rotation-logo {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -11,12 +107,9 @@
 }
 
 body {
-  background-color: #ebebeb;
+  background-color: #f7f7f7;
 }
 
-header {
-  background-color: #fff;
-}
 header i {
   position: absolute;
   font-size: 30px;
@@ -44,7 +137,7 @@ h1 {
   width: 100%;
   border-radius: 50px 50px 0px 0px;
   padding: 25px;
-  background-color: #ebebeb;
+  background-color: #f7f7f7;
   position: relative;
   top: -50px;
 }
@@ -105,32 +198,6 @@ h1 {
   animation-fill-mode: both;
 }
 
-.entree {
-  animation-delay: 0ms;
-  animation-fill-mode: both;
-}
-
-.plat {
-  animation-delay: 2000ms;
-  animation-fill-mode: both;
-}
-
-.dessert {
-  animation-delay: 4000ms;
-  animation-fill-mode: both; /*pour qu'avant l'anim l'opacité soit égale à 0 et égale à 1 après l'anim */
-}
-
-/* animation apparition des menus lors du chargement de la page */
-@keyframes animation-menus {
-  0% {
-    opacity: 0; /* démarrer invisible... */
-    transform: translateY(50px); /* démarrer à 50px sud... */
-  }
-  100% {
-    opacity: 1; /* ...pour finir totalement visible */
-    transform: translateY(0); /* ...pour finir à la position d'origine Y = 0 */
-  }
-}
 /* couper le texte cacher et mettre points de suspension */
 .cards-menu-texte {
   white-space: nowrap;
@@ -176,24 +243,6 @@ h1 {
   color: #fff;
 }
 
-/* animation apparition logo sur cards */
-@keyframes animation-logo {
-  0% {
-    transform: translate(65px, 0px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
-/* animation rotation logo */
-@keyframes rotation-logo {
-  0% {
-    transform: rotate(-360deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
 /* bouton commander */
 .commander {
   display: flex;
@@ -202,16 +251,6 @@ h1 {
 }
 .commander button {
   padding: 25px 50px;
-  border-radius: 50px;
-  border: none;
-  background: linear-gradient(350deg, #9356DC, #FF79DA);
-  color: #fff;
-  box-shadow: 5px 10px 25px #b3b3b3;
-  transition: all 500ms;
-}
-.commander button:hover {
-  background: linear-gradient(350deg, #a16be0, #ff93e1);
-  box-shadow: 5px 10px 25px #666666;
 }
 
 /*# sourceMappingURL=styles-pages.css.map */
