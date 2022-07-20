@@ -1,11 +1,5 @@
 @charset "UTF-8";
-/* importer les polices */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
-/* importer les fichiers sass */ /* couleur shadow boutons */
-/* couleur shadow boutons au survol */
-/* couleur shadow boutons */
-/* couleur shadow boutons au survol */
-/* animation logo coeur */
 @keyframes animation-coeur {
   0% {
     font-weight: initial;
@@ -111,6 +105,11 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@media all and (min-width: 992px) {
+  .filtres {
+    max-width: 50%;
   }
 }
 * {
@@ -236,16 +235,17 @@ header {
   padding-left: 50px;
   border-radius: 25px;
   background-color: #f7f7f7;
+  box-shadow: 0px 5px 15px #d9d9d9;
   transition: all 500ms;
 }
 .body-filtres i {
-  color: gray; /* couleur noire moins sombre de 50% */
+  color: gray;
 }
 .body-filtres:hover {
   background-color: #e4d5f6;
 }
 .body-filtres:hover i {
-  color: #9356DC; /* hover -> changer la couleur de l'icone */
+  color: #9356DC;
 }
 
 .nom-filtres {
@@ -269,6 +269,7 @@ header {
   margin: 25px 0px;
   border-radius: 25px;
   background-color: #fff;
+  box-shadow: 0px 5px 15px #d9d9d9;
 }
 .card a {
   width: 100%;

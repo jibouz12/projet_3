@@ -1,8 +1,5 @@
-/* importer les polices */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
-
-/* importer les fichiers sass */
-@import "assets/couleurs", "assets/anim-coeur", "assets/class-btn", "assets/anim-menu";
+@import "assets/couleurs", "assets/anim-coeur", "assets/class-btn", "assets/anim-menu", "assets/desktop";
 
 * {
     box-sizing: border-box;
@@ -84,7 +81,7 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    box-shadow: 5px 10px 25px $shadow;
+    box-shadow: 0px 5px 15px $shadow-2;
     animation-name: animation-menus;
     animation-duration: 3000ms;
     overflow: hidden; /* cacher ce qui sort de la card lors de l'animation */

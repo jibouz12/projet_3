@@ -1,8 +1,5 @@
-/* importer les polices */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
-
-/* importer les fichiers sass */
-@import "assets/couleurs", "assets/anim-coeur", "assets/class-btn", "assets/spinner";
+@import "assets/couleurs", "assets/anim-coeur", "assets/class-btn", "assets/spinner", "assets/desktop";
 
 * {
     box-sizing: border-box;
@@ -128,14 +125,15 @@ header {
     padding-left: 50px;
     border-radius: 25px;
     background-color: $blanc-casse;
+    box-shadow: 0px 5px 15px $shadow-2;
     transition: all 500ms;
     i {
-        color: lighten(#000, 50 ); /* couleur noire moins sombre de 50% */
+        color: lighten(#000, 50 ); 
     }
     &:hover {
         background-color: lighten($primaire, 30);
         i {
-            color: $primaire; /* hover -> changer la couleur de l'icone */
+            color: $primaire; 
         }
     }
 }
@@ -161,6 +159,7 @@ header {
     margin: 25px 0px;
     border-radius: 25px;
     background-color: #fff;
+    box-shadow: 0px 5px 15px $shadow-2;
     a {
         width: 100%;
         height: 100%;
