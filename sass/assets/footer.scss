@@ -1,0 +1,19 @@
+.footer {
+    padding: 0px 0px 25px 25px;
+    background-color: $blanc-casse;
+    filter: invert(95%); /* inverser les couleurs */
+}
+
+.logo-footer {
+    padding: 25px 0px;
+    img {
+        width: 140px;
+    }
+}
+
+.menu-footer-ligne {
+    margin: 5px 0px;
+    i {
+        margin-right: 5px;
+    }
+}

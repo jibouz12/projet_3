@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
-@import "assets/couleurs", "assets/anim-coeur", "assets/class-btn", "assets/spinner", "assets/desktop";
+@import "assets/couleurs", "assets/anim-coeur", "assets/class-btn", "assets/spinner", "assets/desktop", "assets/footer";
 
 * {
     box-sizing: border-box;
@@ -210,26 +210,5 @@ header {
             animation-duration: 1500ms;
             animation-fill-mode: both;
         }
-    }
-}
-
-/* footer */
-.footer {
-    padding: 0px 0px 25px 25px;
-    background-color: $blanc-casse;
-    filter: invert(95%); /* inverser les couleurs */
-}
-
-.logo-footer {
-    padding: 25px 0px;
-    img {
-        width: 140px;
-    }
-}
-
-.menu-footer-ligne {
-    margin: 5px 0px;
-    i {
-        margin-right: 5px;
     }
 }

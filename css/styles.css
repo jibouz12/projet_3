@@ -112,6 +112,26 @@
     max-width: 50%;
   }
 }
+.footer {
+  padding: 0px 0px 25px 25px;
+  background-color: #f7f7f7;
+  filter: invert(95%); /* inverser les couleurs */
+}
+
+.logo-footer {
+  padding: 25px 0px;
+}
+.logo-footer img {
+  width: 140px;
+}
+
+.menu-footer-ligne {
+  margin: 5px 0px;
+}
+.menu-footer-ligne i {
+  margin-right: 5px;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -319,27 +339,6 @@ header {
   animation-name: animation-coeur;
   animation-duration: 1500ms;
   animation-fill-mode: both;
-}
-
-/* footer */
-.footer {
-  padding: 0px 0px 25px 25px;
-  background-color: #f7f7f7;
-  filter: invert(95%); /* inverser les couleurs */
-}
-
-.logo-footer {
-  padding: 25px 0px;
-}
-.logo-footer img {
-  width: 140px;
-}
-
-.menu-footer-ligne {
-  margin: 5px 0px;
-}
-.menu-footer-ligne i {
-  margin-right: 5px;
 }
 
 /*# sourceMappingURL=styles.css.map */
